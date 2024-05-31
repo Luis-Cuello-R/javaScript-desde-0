@@ -1,0 +1,30 @@
+En JavaScript, los métodos push() y pop() se utilizan para realizar modificaciones básicas al final de un array. Aquí tienes una explicación de cómo funcionan:
+
+Método push():
+El método push() se utiliza para agregar uno o más elementos al final de un array. Modifica el array original y devuelve la nueva longitud del array.
+
+Ejemplo:
+
+
+
+let frutas = ["manzana", "banana", "cereza"];
+
+// Agregar un nuevo elemento al final
+frutas.push("naranja");
+
+console.log(frutas);  // Resultado: ["manzana", "banana", "cereza", "naranja"]
+Método pop():
+El método pop() se utiliza para eliminar el último elemento de un array. Modifica el array original y devuelve el elemento eliminado.
+
+Ejemplo:
+
+
+
+let frutas = ["manzana", "banana", "cereza"];
+
+// Eliminar el último elemento
+let ultimaFruta = frutas.pop();
+
+console.log(frutas);       // Resultado: ["manzana", "banana"]
+console.log(ultimaFruta);  // Resultado: "cereza"
+Ambos métodos son útiles para realizar operaciones básicas al final de un array. Es importante tener en cuenta que push() y pop() afectan directamente al array original y, por lo tanto, son métodos que mutan el array. Si prefieres operar de manera inmutable, puedes utilizar métodos como concat() o el operador de propagación (...) junto con un nuevo array.

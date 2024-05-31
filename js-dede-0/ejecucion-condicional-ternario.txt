@@ -1,0 +1,17 @@
+Ejecución condicional: Operador Ternario
+
+El operador ternario es una forma más corta y concisa de escribir condicionales if-else. Se llama "ternario" porque involucra tres operandos: una condición, un resultado para true y un resultado para false.
+La sintaxis del operador ternario es la siguiente:
+
+
+condición ? expresiónSiVerdadero : expresiónSiFalso
+Primero, se evalúa la condición. Si la condición es verdadera (true), entonces se ejecuta expresiónSiVerdadero. Si la condición es falsa (false), entonces se ejecuta expresiónSiFalso.
+Aquí tienes un ejemplo sencillo:
+
+
+let edad = 15;
+let tipoDePersona = edad >= 18 ? "adulto" : "niño";
+console.log(tipoDePersona); // Imprime: "niño"
+En este ejemplo, la condición es edad >= 18. Si esta condición se cumple (es decir, si edad es 18 o más), entonces tipoDePersona se vuelve "adulto". Si la condición no se cumple (es decir, si edad es menor a 18), entonces tipoDePersona se vuelve "niño".
+Es importante notar que el operador ternario es una expresión, lo que significa que devuelve un valor. En este caso, devuelve "adulto" o "niño", dependiendo de la condición.
+El operador ternario es muy útil cuando quieres realizar asignaciones condicionales en una sola línea, pero puede ser difícil de leer si la lógica es muy compleja. En esos casos, puede ser mejor usar una estructura if-else normal.

@@ -1,0 +1,33 @@
+En JavaScript, el bucle for...of se utiliza para recorrer elementos de una estructura de datos iterable, como arrays, cadenas de texto, mapas, conjuntos, entre otros. Este bucle proporciona una forma más concisa y legible de iterar sobre elementos en comparación con el bucle for...in o el bucle for tradicional.
+
+Sintaxis:
+
+javascriptCopy code
+for (variable of iterable) {
+  // Código a ejecutar en cada iteración
+}
+variable: Una variable que toma el valor de cada elemento en la iteración. Puedes usar cualquier identificador de variable válido en JavaScript.
+iterable: La estructura de datos iterable sobre la cual se realizará la iteración.
+EJEMPLO:
+
+
+javascriptCopy code
+// Declara una variable llamada 'canasta' y le asigna un array con cuatro elementos.
+let canasta = ["manzana", "pera", "naranja", "uva"];
+
+// Inicia un bucle 'for...of', que recorre cada elemento del array 'canasta'.
+for (fruta of canasta) {
+    // Imprime cada elemento (fruta) en la consola.
+    console.log(fruta);
+}
+let canasta = ["manzana", "pera", "naranja", "uva"];
+Se declara una variable llamada canasta utilizando la palabra clave let.
+Se le asigna un array con cuatro elementos: "manzana", "pera", "naranja" y "uva".
+for (fruta of canasta) {
+Se inicia un bucle for...of, que se utiliza para recorrer elementos de una colección, en este caso, el array canasta.
+La variable fruta se declara para representar cada elemento del array en cada iteración del bucle.
+console.log(fruta);
+Dentro del bucle, se utiliza console.log para imprimir en la consola cada elemento del array representado por la variable fruta.
+}
+Cierra el bloque del bucle for...of.
+El código dentro de este bloque se ejecutará para cada elemento del array.

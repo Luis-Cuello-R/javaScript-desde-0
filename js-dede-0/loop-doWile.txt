@@ -1,0 +1,21 @@
+Bucle Do While
+
+El bucle "do while" es una estructura de control que es muy similar al bucle "while", pero con una pequeña diferencia: el bloque de código se ejecuta al menos una vez antes de que se evalúe la condición.
+La sintaxis del bucle "do while" es la siguiente:
+
+
+do {
+  // Código a ejecutar al menos una vez y mientras la condición sea verdadera
+} while (condicion);
+Aquí tienes un ejemplo sencillo:
+
+
+let contador = 0;
+
+do {
+  console.log(contador);
+  contador++;
+} while (contador < 5);
+En este ejemplo, primero se ejecuta el bloque de código una vez, por lo que se imprime el valor de contador, que es 0. Luego, contador se incrementa en 1. Después de ejecutar el bloque de código, se evalúa la condición contador < 5. Si esta condición se cumple (es decir, mientras contador sea menor a 5), se vuelve a ejecutar el bloque de código. Esto continúa hasta que la condición se evalúa como false (es decir, cuando contador es 5). Por lo tanto, este código imprimirá los números del 0 al 4.
+
+💡 Recuerda, la diferencia principal entre "do while" y "while" es que el bucle "do while" garantiza que el bloque de código se ejecute al menos una vez, sin importar la condición. Esto puede ser útil en situaciones donde necesitas que se ejecute el bloque de código al menos una vez.

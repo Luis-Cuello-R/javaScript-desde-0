@@ -1,0 +1,28 @@
+Iteración con map() y forEach()
+map() y forEach() son dos métodos que se utilizan en JavaScript para recorrer (o iterar) sobre los elementos de un array. Aquí te explicaré cómo funcionan.
+
+
+Método forEach()
+forEach() es un método que ejecuta una función para cada elemento en un array. Aquí tienes un ejemplo:
+
+
+let numeros = [1, 2, 3, 4, 5];
+
+numeros.forEach(function(numero) {
+  console.log(numero * 2);
+});
+En este ejemplo, forEach() recorre cada número en el array numeros y ejecuta la función que le pasamos como argumento. Esta función toma un número y lo imprime multiplicado por 2. Por lo tanto, este código imprimirá los números 2, 4, 6, 8, 10.
+
+
+Método map()
+Por otro lado, map() también ejecuta una función para cada elemento en un array, pero a diferencia de forEach(), map() devuelve un nuevo array con los resultados. Aquí tienes un ejemplo:
+
+
+let numeros = [1, 2, 3, 4, 5];
+
+let dobles = numeros.map(function(numero) {
+  return numero * 2;
+});
+
+console.log(dobles); // Imprime: [2, 4, 6, 8, 10]
+En este ejemplo, map() recorre cada número en el array numeros y ejecuta la función que le pasamos como argumento. Esta función toma un número y devuelve ese número multiplicado por 2. map() recoge todos estos resultados y los guarda en un nuevo array, que se almacena en la variable dobles. Por lo tanto, dobles es un nuevo array que contiene los números 2, 4, 6, 8, 10.

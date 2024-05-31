@@ -1,0 +1,52 @@
+Filtrado y reducción con filter() y reduce()
+
+Método Filter()
+El método filter() te permite crear un nuevo array con todos los elementos que pasen una prueba (o, en términos de programación, una "función de callback"). Veamos un ejemplo:
+
+
+let numeros = [1, 2, 3, 4, 5];
+
+let numerosPares = numeros.filter(function(numero) {
+  return numero % 2 === 0;
+});
+
+console.log(numerosPares); // Imprime: [2, 4]
+En este ejemplo, filter() recorre cada número en el array numeros y ejecuta la función que le pasamos como argumento. Esta función devuelve true si el número es par (es decir, si el número dividido por 2 no tiene residuo) y false si no lo es. filter() recoge todos los números para los que la función devuelve true y los guarda en un nuevo array, que se almacena en la variable numerosPares. Por lo tanto, numerosPares es un nuevo array que contiene los números 2 y 4.
+
+
+Método Reduce()
+El método reduce() aplica una función a un acumulador y a cada elemento de un array (de izquierda a derecha) para reducirlo a un solo valor. Echemos un vistazo a un ejemplo:
+
+
+let numeros = [1, 2, 3, 4, 5];
+
+let suma = numeros.reduce(function(acumulador, numero) {
+  return acumulador + numero;
+}, 0);
+
+console.log(suma); // Imprime: 15
+En este ejemplo, reduce() utiliza una función y un valor inicial de 0 (el segundo argumento que pasamos a reduce()) para sumar todos los números en el array numeros. La función toma dos argumentos: el "acumulador" (que es el resultado de la operación hasta ahora) y el "número" (que es el elemento actual del array). Para cada número en el array, sumamos el acumulador y el número, y luego devolvemos el resultado. Este resultado se convierte en el nuevo acumulador para la siguiente iteración. Al final de todas las iteraciones, reduce() devuelve el acumulador, que en este caso es la suma de todos los números en el array, y la almacena en la variable suma. Por lo tanto, suma es 15, que es la suma de todos los números en el array numeros.
+
+
+Método Reduce() para contar palabras repetidas
+El método reduce() también puede ser utilizado para contar la frecuencia de palabras en un array. Aquí tienes un ejemplo:
+
+
+let palabras = ["manzana", "banana", "manzana", "banana", "naranja", "manzana"];
+
+let conteo = palabras.reduce(function(acumulador, palabra) {
+  if (palabra in acumulador) {
+    acumulador[palabra]++;
+  } else {
+    acumulador[palabra] = 1;
+  }
+  return acumulador;
+}, {});
+
+console.log(conteo); // Imprime: { manzana: 3, banana: 2, naranja: 1 }
+En este ejemplo, la función que pasamos a reduce() toma dos argumentos: el "acumulador" (que es el objeto donde almacenamos el conteo de palabras) y la "palabra" (que es el elemento actual del array).
+Si la palabra ya existe como una propiedad en el acumulador, incrementamos su valor. Si no, la agregamos al acumulador con un valor inicial de 1.
+Al final, el acumulador contiene el conteo de todas las palabras en el array, y lo almacenamos en la variable conteo. Por lo tanto, conteo es un objeto que contiene el conteo de todas las palabras en el array.
+
+
+

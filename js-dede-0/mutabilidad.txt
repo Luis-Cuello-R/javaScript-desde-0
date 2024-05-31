@@ -1,0 +1,119 @@
+En JavaScript, la inmutabilidad y mutabilidad se refieren a la capacidad de modificar o no modificar un objeto, como un array, una vez que ha sido creado. Veamos ambas concepts:
+
+Mutabilidad:
+
+Un objeto mutable es aquel cuyo estado puede ser modificado después de su creación.
+En el caso de arrays mutables, puedes agregar, eliminar o modificar elementos después de su creación.
+Esto significa que una variable que hace referencia a un array mutable puede cambiar su contenido en cualquier momento.
+Ejemplo de array mutable:
+
+
+javascriptCopy code
+let mutableArray = [1, 2, 3];
+mutableArray.push(4); // Modifica el array original
+console.log(mutableArray); // Output: [1, 2, 3, 4]
+Inmutabilidad:
+
+Un objeto inmutable es aquel cuyo estado no puede ser modificado después de su creación.
+En el caso de arrays inmutables, no puedes agregar, eliminar ni modificar elementos después de su creación.
+En lugar de modificar el array original, se crean nuevos arrays con los cambios realizados.
+Ejemplo de array inmutable (usando métodos como concat o slice que no modifican el array original):
+
+
+javascriptCopy code
+let immutableArray = [1, 2, 3];
+let newArray = immutableArray.concat(4); // Crea un nuevo array con el elemento añadido
+console.log(immutableArray); // Output: [1, 2, 3] (el array original no ha cambiado)
+console.log(newArray); // Output: [1, 2, 3, 4]
+También puedes usar el operador de propagación (...) para crear un nuevo array:
+
+
+javascriptCopy code
+let immutableArray = [1, 2, 3];
+let newArray = [...immutableArray, 4];
+console.log(immutableArray); // Output: [1, 2, 3] (el array original no ha cambiado)
+console.log(newArray); // Output: [1, 2, 3, 4]
+Mutabilidad:
+1. push
+Descripción: Agrega uno o más elementos al final de un array.
+Mutabilidad: Modifica el array original.
+
+javascriptCopy code
+let array = [1, 2, 3];
+array.push(4, 5);
+// Ahora, array es [1, 2, 3, 4, 5]
+2. pop
+Descripción: Elimina el último elemento de un array.
+Mutabilidad: Modifica el array original.
+
+javascriptCopy code
+let array = [1, 2, 3];
+array.pop();
+// Ahora, array es [1, 2]
+3. splice
+Descripción: Cambia el contenido de un array eliminando o reemplazando elementos existentes y/o agregando nuevos elementos.
+Mutabilidad: Modifica el array original.
+
+javascriptCopy code
+let array = [1, 2, 3, 4, 5];
+array.splice(2, 2, 6, 7);
+// Ahora, array es [1, 2, 6, 7, 5]
+4. shift
+Descripción: Elimina el primer elemento de un array.
+Mutabilidad: Modifica el array original.
+
+javascriptCopy code
+let array = [1, 2, 3];
+array.shift();
+// Ahora, array es [2, 3]
+5. unshift
+Descripción: Agrega uno o más elementos al inicio de un array.
+Mutabilidad: Modifica el array original.
+
+javascriptCopy code
+let array = [2, 3];
+array.unshift(1);
+// Ahora, array es [1, 2, 3]
+Inmutabilidad:
+1. concat
+Descripción: Retorna un nuevo array que combina el array original con otros arrays o elementos.
+Mutabilidad: No modifica el array original.
+
+javascriptCopy code
+let array1 = [1, 2];
+let array2 = [3, 4];
+let newArray = array1.concat(array2);
+// array1 sigue siendo [1, 2], newArray es [1, 2, 3, 4]
+2. slice
+Descripción: Retorna una porción de un array sin modificar el array original.
+Mutabilidad: No modifica el array original.
+
+javascriptCopy code
+let array = [1, 2, 3, 4, 5];
+let newArray = array.slice(1, 4);
+// array sigue siendo [1, 2, 3, 4, 5], newArray es [2, 3, 4]
+Como saber que mi array es un array?
+La función Array.isArray() es una función incorporada en JavaScript que te permite comprobar si una variable es un array. Aquí hay una explicación más detallada:
+
+Definición del Array: Un array es una estructura de datos que permite almacenar múltiples valores en una sola variable. Estos valores pueden ser de cualquier tipo, y se accede a ellos mediante un índice numérico.
+
+
+javascriptCopy code
+let miArray = [1, 2, 3, 4];
+Array.isArray():Array.isArray() es una función que acepta una variable como argumento y devuelve true si esa variable es un array, y false si no lo es.
+
+
+javascriptCopy code
+let esArray = Array.isArray(miArray);
+En este caso, esArray será true porque miArray es un array.
+
+Uso en una Condición: Puedes utilizar Array.isArray() en una declaración if para tomar decisiones basadas en si la variable es un array o no.
+
+
+javascriptCopy code
+if (Array.isArray(miArray)) {
+    console.log("La variable es un array");
+} else {
+    console.log("La variable no es un array");
+}
+Aquí, el código imprimirá en la consola el mensaje correspondiente según si miArray es un array o no.

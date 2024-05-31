@@ -1,0 +1,30 @@
+Verificación y evaluación con every() y some()
+
+Método Every()
+El método every() se utiliza para verificar si todos los elementos de un array cumplen con una condición dada. Este método devuelve un valor booleano, es decir, true o false.
+Por ejemplo, si tienes un array de números y quieres verificar si todos los números son mayores que 10, puedes usar el método every():
+
+
+let numeros = [20, 30, 40, 50];
+
+let todosMayoresA10 = numeros.every(function(numero) {
+  return numero > 10;
+});
+
+console.log(todosMayoresA10); // Imprime: true
+En este ejemplo, como todos los números en el array numeros son mayores que 10, el método every() devuelve true.
+
+
+Método Some()
+El método some() es similar al método every(), pero en lugar de verificar si todos los elementos cumplen con una condición, verifica si al menos un elemento cumple con la condición. Este método también devuelve un valor booleano.
+Por ejemplo, si tienes el mismo array de números y quieres verificar si al menos un número es mayor que 40, puedes usar el método some():
+
+
+let numeros = [20, 30, 40, 50];
+
+let algunoMayorA40 = numeros.some(function(numero) {
+  return numero > 40;
+});
+
+console.log(algunoMayorA40); // Imprime: true
+En este ejemplo, como al menos un número en el array numeros es mayor que 40 (en este caso, 50), el método some() devuelve true.

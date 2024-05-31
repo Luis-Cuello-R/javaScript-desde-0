@@ -1,0 +1,92 @@
+Modificación avanzada de arrays con splice(), reverse(), sort() y fill()
+Vamos a aprender sobre algunos métodos más complejos para manipular arrays en JavaScript. Es importante dominar estos métodos, porque son comunes en las entrevistas. 👀
+
+
+Método Splice()
+El método splice() te permite agregar o quitar elementos de un array en cualquier posición. Aquí tienes un ejemplo:
+
+
+let frutas = ["manzana", "banana", "mango"];
+console.log(frutas); // Imprime: ["manzana", "banana", "mango"]
+
+// Usamos splice() para quitar "banana" y agregar "pera" y "melón" en su lugar
+frutas.splice(1, 1, "pera", "melón");
+console.log(frutas); // Imprime: ["manzana", "pera", "melón", "mango"]
+En este ejemplo, el primer número que pasamos a splice() es el índice donde queremos empezar a cambiar el array (1 en este caso, que corresponde a "banana"). El segundo número es cuántos elementos queremos quitar (1 en este caso, así que solo quitamos "banana"). Después, todos los argumentos que siguen son los elementos que queremos agregar.
+
+
+Método Reverse()
+El método reverse() simplemente invierte el orden de los elementos en un array. Mira este ejemplo:
+
+
+let frutas = ["manzana", "pera", "mango"];
+console.log(frutas); // Imprime: ["manzana", "pera", "mango"]
+
+// Usamos reverse() para invertir el orden del array
+frutas.reverse();
+console.log(frutas); // Imprime: ["mango", "pera", "manzana"]
+En este ejemplo, reverse() cambia el orden del array frutas para que "mango" sea el primer elemento y "manzana" sea el último.
+
+
+Método Sort()
+El método sort() organiza los elementos de un array en orden alfabético. Aquí tienes un ejemplo:
+
+
+let frutas = ["mango", "pera", "manzana"];
+console.log(frutas); // Imprime: ["mango", "pera", "manzana"]
+
+// Usamos sort() para ordenar el array alfabéticamente
+frutas.sort();
+console.log(frutas); // Imprime: ["manzana", "mango", "pera"]
+En este ejemplo, sort() reorganiza el array frutas para que "manzana" sea el primer elemento y "pera" sea el último.
+
+
+Método Sort() con números
+El método sort() también se puede utilizar con arrays de números. Sin embargo, es importante tener en cuenta que sort() convierte los números a strings y luego los compara según las reglas de ordenación de strings. Esto puede resultar en un ordenamiento que no es numérico. Aquí tienes un ejemplo:
+
+
+let numeros = [10, 5, 100, 2, 50];
+console.log(numeros); // Imprime: [10, 5, 100, 2, 50]
+
+// Usamos sort() para ordenar el array
+numeros.sort();
+console.log(numeros); // Imprime: [10, 100, 2, 5, 50]
+En este ejemplo, puedes ver que sort() no ordena los números de menor a mayor, sino que los ordena como si fueran strings, lo que produce un resultado inesperado. Para ordenar un array de números de manera numérica, tendrías que proporcionar una función de comparación a sort().
+
+
+¿Por qué sucede esto con sort() y los números?
+El método sort() de JavaScript, cuando se utiliza sin argumentos en un array de números, convierte estos números a strings y los compara en base a su valor Unicode, no en base a su valor numérico. Esto se traduce en un ordenamiento alfabético en lugar de numérico. Aquí te explico paso a paso cómo sucede esto:
+
+Primero, sort() convierte cada número del array a un string. Por ejemplo, si tu array original es [10, 5, 100, 2, 50], después de la conversión a strings tendrías un array que se ve así: ["10", "5", "100", "2", "50"].
+Luego, sort() compara cada par de elementos en el array convertido a string uno a uno. La comparación se basa en la posición de los caracteres en la tabla Unicode, no en su valor numérico. Como resultado, los números se ordenan como si fueran strings.
+En la tabla Unicode, los números se ordenan de izquierda a derecha. Es decir, sort() primero mira el primer carácter de cada string. Si el primer carácter es igual en ambos strings, entonces mira el siguiente carácter, y así sucesivamente.
+En el caso de nuestro array de ejemplo, al comparar "10" y "100", por ejemplo, "10" viene antes que "100" porque el primer carácter que difiere en los dos strings (el tercero) es inexistente en "10", y cualquier string es menor que un string que lo tiene como prefijo seguido de más caracteres.
+Como resultado, el array ordenado se ve así: ["10", "100", "2", "5", "50"].
+
+Para ordenar un array de números de manera numérica, tendrias que proporcionar una función de comparación a sort(). Esta función toma dos elementos del array a la vez, los compara y determina su orden en base a si el resultado de la comparación es negativo, cero o positivo.
+
+
+Método Sort() con función de comparación
+Para ordenar correctamente un array de números en JavaScript, necesitamos proporcionar una función de comparación a sort(). Esta función define el orden de la clasificación. Aquí tienes un ejemplo:
+
+
+let numeros = [10, 5, 100, 2, 50];
+console.log(numeros); // Imprime: [10, 5, 100, 2, 50]
+
+// Usamos sort() con una función de comparación para ordenar el array
+numeros.sort((a, b) => a - b);
+console.log(numeros); // Imprime: [2, 5, 10, 50, 100]
+En este ejemplo, la función de comparación (a, b) => a - b ordena los números de menor a mayor. Si a - b es menor que cero, sort() ordena a antes que b. Si a - b es mayor que cero, sort() ordena b antes que a. Si a - b es igual a cero, a y b se dejan sin cambios respecto a su orden en el array original (pero se ordenan con respecto a todos los elementos diferentes).
+
+
+Método Fill()
+El método fill() cambia todos los elementos en un array por un valor estático. Aquí tienes un ejemplo:
+
+
+let frutas = ["manzana", "pera", "mango"];
+console.log(frutas); // Imprime: ["manzana", "pera", "mango"]
+
+// Usamos fill() para cambiar todos los elementos por "naranja"
+frutas.fill("naranja");
+console.log(frutas); // Imprime: ["naranja", "naranja", "naranja"]
+En este ejemplo, fill() cambia todos los elementos de frutas por "naranja".

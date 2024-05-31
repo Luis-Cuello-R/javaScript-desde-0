@@ -1,0 +1,29 @@
+Búsqueda de elementos con find() y findIndex()
+Método Find()
+El método find() se utiliza para buscar un elemento específico en un array. Este método recorre el array, elemento por elemento, hasta encontrar el primer elemento que cumpla una condición dada. Si no encuentra ningún elemento que cumpla la condición, find() devuelve undefined.
+Aquí tienes un ejemplo:
+
+
+let numeros = [1, 2, 3, 4, 5, 6];
+
+let numeroBuscado = numeros.find(function(numero) {
+  return numero > 3;
+});
+
+console.log(numeroBuscado); // Imprime: 4
+En este ejemplo, find() recorre el array numeros y devuelve el primer número que es mayor que 3. Por lo tanto, numeroBuscado es 4.
+
+
+Método FindIndex()
+El método findIndex() es similar a find(), pero en lugar de devolver el elemento que cumple la condición, devuelve el índice de ese elemento. Si no encuentra ningún elemento que cumpla la condición, findIndex() devuelve -1.
+Aquí tienes un ejemplo:
+
+
+let numeros = [1, 2, 3, 4, 5, 6];
+
+let indiceBuscado = numeros.findIndex(function(numero) {
+  return numero > 3;
+});
+
+console.log(indiceBuscado); // Imprime: 3
+En este ejemplo, findIndex() recorre el array numeros y devuelve el índice del primer número que es mayor que 3. Por lo tanto, indiceBuscado es 3.

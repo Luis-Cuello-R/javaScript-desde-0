@@ -1,0 +1,26 @@
+Loop: while
+Lo usamos para poder meter instrucciones en un ciclo y se vaya repitiendo siempre y cuando se cumpla la condición que tenemos en él. Es importante comprenderlo y saber utilizarlo, de no hacerlo bien podemos generar bucles infinitos que harán colapsar al navegador.
+
+
+while(condición) {
+    //código
+}
+Primero generamos una variable que se convertirá en un contador, lo incluiremos e la condición para que se vaya incrementando:
+
+
+let contador = 0;
+
+while (contador < 10) { //mientras contador sea menor a 10 entonces
+    console.log(contador); //imprime en la consola el valor de contador en ese momento
+    contador++; //luego sumale 1. ESTO ES IMPORTANTE porque sino contador siempre va a ser menor a 10 = BUCLE INFINITO!! y el navegador CAPUT!!!
+}
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9

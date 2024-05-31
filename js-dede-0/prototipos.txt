@@ -1,0 +1,27 @@
+¿Qué es la cadena de prototipo en Javascript?
+La cadena de prototipos (también conocida como "prototype chain") es un mecanismo que JavaScript utiliza para buscar propiedades y métodos de un objeto. Cuando se accede a una propiedad o método de un objeto, JavaScript intentará buscar esta propiedad o método en el propio objeto. Si no puede encontrarlo ahí, buscará en el objeto prototipo del objeto actual, y luego en el prototipo de ese prototipo, y así sucesivamente, hasta que encuentre la propiedad o llegue al final de la cadena de prototipos (que es null).
+Aquí tienes un ejemplo sencillo:
+
+
+let animal = {
+  nombre: 'Fido',
+  sonido: function() {
+    console.log('Hace un ruido');
+  }
+};
+
+let perro = Object.create(animal);
+perro.sonido(); // Imprime 'Hace un ruido'
+En este caso, perro es un objeto que fue creado con animal como su prototipo. Cuando llamamos al método sonido en perro, JavaScript no encuentra este método en el objeto perro y por lo tanto busca en su prototipo, que es el objeto animal, y lo encuentra allí.
+Si agregamos un método al objeto perro con el mismo nombre, este sobrescribirá el método en animal:
+
+
+perro.sonido = function() {
+  console.log('Ladra');
+};
+
+perro.sonido(); // Imprime 'Ladra'
+Ahora, cuando llamamos al método sonido en perro, JavaScript lo encuentra inmediatamente en el objeto perro y no necesita buscar en la cadena de prototipos.
+
+
+

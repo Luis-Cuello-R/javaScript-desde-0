@@ -1,0 +1,29 @@
+Modificación del principio de un array con shift() y unshift()
+Al igual que push() y pop(), JavaScript proporciona otros dos métodos para modificar los arrays: shift() y unshift(). Estos funcionan de manera similar a push() y pop(), pero en lugar de trabajar en el final del array, trabajan en el principio.
+
+
+Método Shift()
+El método shift() elimina el primer elemento del array y devuelve ese elemento. Aquí tienes un ejemplo:
+
+
+let frutas = ["manzana", "banana", "mango"];
+console.log(frutas); // Imprime: ["manzana", "banana", "mango"]
+
+// Usamos shift() para eliminar el primer elemento del array
+let frutaEliminada = frutas.shift();
+console.log(frutas); // Imprime: ["banana", "mango"]
+console.log(frutaEliminada); // Imprime: "manzana"
+En este ejemplo, shift() ha eliminado el primer elemento ("manzana") del array frutas.
+
+
+Método Unshift()
+El método unshift(), por otro lado, agrega uno o más elementos al principio del array y devuelve la nueva longitud del array. Aquí tienes un ejemplo:
+
+
+let frutas = ["banana", "mango"];
+console.log(frutas); // Imprime: ["banana", "mango"]
+
+// Usamos unshift() para agregar "manzana" al principio del array
+frutas.unshift("manzana");
+console.log(frutas); // Imprime: ["manzana", "banana", "mango"]
+En este ejemplo, unshift() ha agregado el elemento "manzana" al principio del array frutas.
